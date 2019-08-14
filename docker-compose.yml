@@ -26,9 +26,15 @@ services:
       - "25000-25005:25000-25005"
     restart: always
     volumes:
-      - /opt/CrikstalBot/addons
-      - /opt/CrikstalBot/logs
-      - /opt/CrikstalBot/config
-      - /opt/CrikstalBot/dbbackup
+      - cb-addons:/opt/CrikstalBot/addons
+      - cb-logs:/opt/CrikstalBot/logs
+      - cb-config:/opt/CrikstalBot/config
+      - cb-dbbackup:/opt/CrikstalBot/dbbackup
     env_file: .env
+
+volumes:
+  cb-addons:
+  cb-logs:
+  cb-config:
+  cb-dbbackup:
 
