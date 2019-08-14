@@ -68,3 +68,6 @@ nbproject/
 .classpath
 .project
 
+# Configuration files
+.env
+

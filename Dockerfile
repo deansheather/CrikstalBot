@@ -18,7 +18,7 @@
 # Build container
 FROM openjdk:8-jdk as builder
 
-ARG PROJECT_NAME=PhantomBot
+ARG PROJECT_NAME=CrikstalBot
 ARG BASEDIR=/opt/${PROJECT_NAME}
 ARG BUILDDIR=${BASEDIR}_build
 ARG DATADIR=${BASEDIR}_data
@@ -41,7 +41,7 @@ RUN cd "${BUILDDIR}" \
 # Application container
 FROM openjdk:8-jre-alpine
 
-ARG PROJECT_NAME=PhantomBot
+ARG PROJECT_NAME=CrikstalBot
 ARG BASEDIR=/opt/${PROJECT_NAME}
 ARG BUILDDIR=${BASEDIR}_build
 ARG DATADIR=${BASEDIR}_data
