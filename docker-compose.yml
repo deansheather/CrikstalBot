@@ -17,7 +17,7 @@
 
 version: '2'
 services:
-  phantombot:
+  crikstalbot:
     build:
       context: .
     container_name: crikstalbot
