@@ -27,9 +27,8 @@ services:
     restart: always
     volumes:
       - /opt/CrikstalBot/addons
-      - /opt/CrikstalBot/botlogin.txt
       - /opt/CrikstalBot/logs
-      - /opt/CrikstalBot/config/phantombot.db
-      - /opt/CrikstalBot/config/phantombot.db-journal
+      - /opt/CrikstalBot/config
+      - /opt/CrikstalBot/dbbackup
     env_file: .env
 
