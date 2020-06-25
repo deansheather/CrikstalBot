@@ -138,9 +138,7 @@
         // Check for duplicates and exceeding limits.
         var countOfUser = 0;
         for (var i = 0; i < queue.length; i++) {
-            $.say(queue[i].username.trim() + " " + username.trim() + " " + (queue[i].username.trim().toLowerCase() === username.trim().toLowerCase()));
             if (queue[i].username.trim().toLowerCase() === username.trim().toLowerCase()) {
-                $.say('incremented')
                 countOfUser++;
             }
             if (queue[i].code === code) {
@@ -161,13 +159,6 @@
             time: new Date(),
             username: username
         });
-        /*var temp = {
-            'code': code,
-            'position': position,
-            'time': String(date(new Date(), true)),
-            'username': String(username)
-        };
-        $.inidb.set('smmQueue', position, JSON.stringify(temp));*/
         resetPosition(oldLength);
 
         // Send response.

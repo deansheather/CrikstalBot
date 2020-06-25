@@ -52,8 +52,8 @@ $.lang.register('mariomakercodequeuesystem.queue.list', 'Current queue list: $1.
 $.lang.register('mariomakercodequeuesystem.queue.list.limited', 'Current queue list: $1. (displaying $2 of $3)');
 $.lang.register('mariomakercodequeuesystem.queue.list.empty', 'No course codes are in the queue.');
 
-$.lang.register('mariomakercodequeuesystem.queue.next', 'Next Super Mario 2 course code: $1 (submitted by $2).');
+$.lang.register('mariomakercodequeuesystem.queue.next', 'Next Super Mario Maker 2 course code: $1 (submitted by $2).');
 
-$.lang.register('mariomakercodequeuesystem.queue.pick', 'Picked Super Mario 2 course code: $1 (submitted by @$2).');
+$.lang.register('mariomakercodequeuesystem.queue.pick', 'Picked Super Mario Maker 2 course code: $1 (submitted by @$2).');
 
 $.lang.register('mariomakercodequeuesystem.usage', 'Usage: !smmqueue [open / close / clear / next / list / pick / position / info]');
