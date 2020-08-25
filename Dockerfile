@@ -18,7 +18,7 @@
 # Build container
 FROM adoptopenjdk:11-jdk-hotspot-bionic as builder
 
-ARG PROJECT_NAME=PhantomBot
+ARG PROJECT_NAME=CrikstalBot
 ARG BASEDIR=/opt/${PROJECT_NAME}
 ARG BUILDDIR=${BASEDIR}_build
 ARG DATADIR=${BASEDIR}_data
@@ -42,7 +42,7 @@ RUN cd "${BUILDDIR}" \
 # Application container
 FROM adoptopenjdk:11-jre-hotspot-bionic
 
-ARG PROJECT_NAME=PhantomBot
+ARG PROJECT_NAME=CrikstalBot
 ARG PROJECT_VERSION
 ARG BASEDIR=/opt/${PROJECT_NAME}
 ARG BUILDDIR=${BASEDIR}_build

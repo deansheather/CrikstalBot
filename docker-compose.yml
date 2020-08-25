@@ -17,55 +17,17 @@
 
 version: '3'
 services:
-
-  caddy:
-    container_name: caddy
-    image: caddy:latest
+  crikstalbot:
+    build: 
+      context: .
+    container_name: crikstalbot
+    image: deansheather/crikstalbot:latest
     ports:
-      - 443:443
-    restart: always
-    depends_on:
-      - phantombot
-    volumes:
-      - caddy_data:/data
-      - caddy_config:/config
-    command: [
-      "caddy",
-      "reverse-proxy",
-      "--from",
-      "${DOMAIN:-localhost}",
-      "--to",
-      "phantombot-nightly:25000"
-    ]
-
-  phantombot:
-    # build: 
-    #   context: .
-    #   dockerfile: Dockerfile
-    #   args:
-    #     PROJECT_VERSION: $PROJECT_VERSION
-    #     TARGETPLATFORM: ${TARGETPLATFORM:-linux/amd64}
-    container_name: phantombot-nightly
-    image: gmt2001/phantombot-nightly:latest
+      - "25000-25005:25000-25005"
     restart: always
     volumes:
-      - PhantomBot_data:/opt/PhantomBot_data
-    environment:
-      # ------ Override any botlogin.txt variable here, with the PHANTOMBOT_ prefix
-      # Twitch bot user (Required)
-      PHANTOMBOT_USER:
-      # Twitch bot user OAuth token (https://twitchapps.com/tmi/) (Required)
-      PHANTOMBOT_OAUTH:
-      # Twitch caster channel OAuth token (https://phantom.bot/oauth/)
-      PHANTOMBOT_APIOAUTH:
-      # Twitch caster channel (Required)
-      PHANTOMBOT_CHANNEL:
-      # Webinterface username
-      PHANTOMBOT_PANELUSER:
-      # Webinterface password
-      PHANTOMBOT_PANELPASSWORD:
+      - crikstal_data:/opt/CrikstalBot_data
+    env_file: .env
 
 volumes:
-  caddy_data:
-  caddy_config:
-  PhantomBot_data:
+  crikstal_data:
